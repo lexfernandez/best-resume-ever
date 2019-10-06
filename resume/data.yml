@@ -1,92 +1,79 @@
 /* #*/ export const PERSON = `
 name:
-  first: John
+  first: Alex
   middle:
-  last: Doe
-about: Hi, my name is John Doe. I"m just about the most boring type of person you could
-       possibly imagine. I like collecting leaves from the tree in my back yard and documenting
-       each time I eat a peanut that is non-uniform. I am not a robot. Please hire me.
-position: Software Developer
+  last: Fernández
+about: Hi, my name is John Doe. I"m just about the most boring type of person you could possibly imagine. I like collecting leaves from the tree in my back yard and documenting each time I eat a peanut that is non-uniform. I am not a robot. Please hire me.
+position: Senior Software Developer
 
 birth:
-  year: 1990
-  location: New York
+  year: 1992
+  location: Choloma, Honduras
 
 experience:
-- company: Company A
-  position: Developer
-  timeperiod: since January 2016
-  description: Programming and watching cute cat videos.
-  website: https://example.com
+- company: ArcBest/Number8
+  position: Senior Software Developer - Remote
+  timeperiod: since October 2016
+  description: As one of Number8's software contractors, I contributed to our client's development team making ASP pages to be HTML5 Compliant and replacing VBScript with javascript, testing and fixing any issues, making the migration process transparent to the user.
+  website: https://number8.com
 
-- company: Company B
-  position: Frontend Developer
-  timeperiod: January 2015 - December 2015
-  description: Fulfillment of extremely important tasks.
-
-- company: Company C
-  position: Trainee
-  timeperiod: March 2014 - December 2014
-  description: Making coffee and baking cookies.
+- company: Seguridad Movil GPS / Optimus GPS Tracking
+  position: Senior Software Engineer, IT Manager - Onsite
+  timeperiod: since December 2014
+  description: Seguridad Móvil GPS provides GPS tracking and fleet management solutions, with a presence in more than 10 countries I built a team of 6 developers and now I am leading it. I moved all the projects under a version control system and after that, we start the development of a new GPS tracking platform using new technologies and establishing a development process that helps me to gather the requirements and turns them into doable tasks for each developer, following agile methodologies and best practices we ensure the software quality.
+  website: http://www.smovilgps.com
 
 education:
-- degree: Master of Arts
-  timeperiod: March 2012 - December 2013
-  description: Major in Hacking and Computer Penetration, University A, New York, USA.
-  website: https://example.com
+- degree: B.S in Computer Science
+  timeperiod: January 2011 - Octubre 2017
+  description: Universidad Tecnológica Centroamericana, San Pedro Sula, Honduras.
+  website: http://www.unitec.edu
 
-- degree: Bachelor of Science
-  timeperiod: March 2009 - December 2011
-  description: Major in Engineering, University B, Los Angeles, USA.
+- degree: English Diploma
+  timeperiod: January 2007 - June 2009
 
 # skill level goes 0 to 100
 skills:
 - name: HTML5
-  level: 99
 - name: CSS3
-  level: 95
-- name: JavaScript
-  level: 97
-- name: Node.js
-  level: 93
-- name: Angular 2
-  level: 60
-- name: TypeScript
-  level: 80
-- name: ES.Next
-  level: 70
-- name: Docker
-  level: 99
-knowledge: Also proficient in Adobe Photoshop and Illustrator, grew up bilingual
-  (English and Klingon).
+- name: ReactJS
+- name: Redux
+- name: NodeJs/Loopback
+- name: Asp MVC
+- name: C#
+- name: Sengrid
+- name: Twilio
+- name: Stripe
+- name: POD Group
+- name: Kore 
+# knowledge: Also proficient in Adobe Photoshop and Illustrator, grew up bilingual
+#   (English and Klingon).
 
 projects:
-- name: best-resume-ever
-  platform: Vue
-  description: 👔 💼 Build fast 🚀 and easy multiple beautiful resumes and create your best CV ever! Made with Vue and LESS.
-  url: https://github.com/salomonelli/best-resume-ever
+- name: Optimus App
+  platform: React,Redux,Ant Design and RabbitMQ
+  description: It's a GPS tracking and fleet management platform. It currently provides real-time tools, not only limited to location but extending to geofences, routes, visualizing fuel consumption, vehicle temperature and speed. In addition to these, it allows you to know if the vehicle should be taken to maintenance and setup notification for the different events, such notifications can be delivered over SMS, email, mobile or web app. Our AWS CI/CD pipeline allows us to automate the delivery process and our s3 bucket serves the ReactJs based application.
+  url: http://optimuswebapp-prod.s3-website-us-west-2.amazonaws.com
 
-hobbies:
-- name: Video Games
-  iconClass: fa fa-gamepad
-  url: https://example.com
+- name: Optimus API
+  platform: Loopback.io
+  description: It's a restful API that allows the communication between the web app and our RDS server, it makes use of pm2 and aws ELB to distribute the traffic across the multiple instances allowing us to have scalability and high availability.
+  url: http://optimusapi-prod.us-west-2.elasticbeanstalk.com
 
-- name: Drawing
-  iconClass: fa fa-pencil
-  url: https://example.com
+- name: Optimus Database
+  platform: RDS - SQL Server
+  description: I designed a new database that deals with many issues from the old platform through the normalization process, the new design solved problems like data consistency, retrieval speed, redundancy and ambiguity caused by a bad design, lack of relationships and indexes.
 
-contributions:
-- name: best-resume-ever
-  description: 👔 💼 Build fast 🚀 and easy multiple beautiful resumes.
-  url: https://github.com/salomonelli/best-resume-ever
+- name: HTML5 Migration
+  platform: ArcBest Intranet
+  description: It's a restful API that allows the communication between the web app and our RDS server, it makes use of pm2 and aws ELB to distribute the traffic across the multiple instances allowing us to have scalability and high availability.
 
 contact:
-  email: john.doe@email.com
-  phone: 0123 456789
-  street: 1234 Broadway
-  city: New York
-  website: johndoe.com
-  github: johnyD
+  email: olorenzo@outlook.com
+  phone: (+504) 3176-8101
+  street: Res. Villa Valencia Blq. I26
+  city: Choloma, Cortés
+  github: lexfernandez
 # en, de, fr, pt, ca, cn, it, es, th, pt-br, ru, sv, id, hu, pl, ja, ka, nl, he, zh-tw, lt, ko, el
 lang: en
 `

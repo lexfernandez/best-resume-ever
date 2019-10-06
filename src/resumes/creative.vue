@@ -4,7 +4,7 @@
       <div>
         <div class="headline">
           <span> {{ person.name.first }} {{ person.name.middle }} </span>
-          <span class="uppercase"> {{ person.name.last }} </span>
+          <span> {{ person.name.last }} </span>
         </div>
 
         <p>
@@ -21,39 +21,36 @@
       <div class="multi-line-txt">
         {{ person.knowledge }}
       </div>
-
-      <a :href="contactLinks.email">
-        <div class="block-marged txt-full-white">
-          {{ person.contact.email }}
+      <span class="section-headline white-color">{{ lang.contact }} </span>
+      <a :href="'mailto:' + person.contact.email">
+        <div class="block-marged txt-full-white without-margin">
+          <i class="material-icons white-color">mail</i>  {{ person.contact.email }}
         </div>
       </a>
 
-      <div class="block-marged txt-full-white">
-        {{ person.contact.phone }}
+      <div class="block-marged txt-full-white without-margin">
+        <i class="material-icons white-color">phone</i>  {{ person.contact.phone }}
       </div>
 
-      <div class="social-container">
+      <div class="social-container without-margin">
         <a v-if="person.contact.website"
           :href="person.contact.website">
 
-          <div class="block-marged txt-full-white">
+          <div class="block-marged txt-full-white without-margin">
             <i class="fa fa-globe contact-icon"></i>
             {{ person.contact.website }}
           </div>
         </a>
 
         <a v-if="person.contact.github"
-          :href="contactLinks.github"
+          :href="'https://github.com/' + person.contact.github"
           class="external-link">
 
-          <i class="fa fa-github contact-icon"></i>
-          <span class="block-marged txt-full-white">
-            {{ person.contact.github }}
-          </span>
+          <span class="block-marged txt-full-white without-margin"><i class="fa fa-github contact-icon"></i>  {{ person.contact.github }}</span>
         </a>
 
         <a v-if="person.contact.codefights"
-          :href="contactLinks.codefights"
+          :href="'https://codefights.com/profile/' + person.contact.codefights"
           class="external-link">
 
           <svg width="20" height="20" viewBox="0 0 24 24"
@@ -68,7 +65,7 @@
         </a>
 
         <a v-if="person.contact.medium"
-          :href="contactLinks.medium"
+          :href="'https://medium.com/@' + person.contact.medium"
           class="external-link">
           <i class="fab fa-medium contact-icon"></i>
           <span class="block-marged txt-full-white">
@@ -89,6 +86,30 @@
           </a>
         </div>
       </div>
+
+      <div class="content">
+        <div class="content__left">
+          <div
+              v-if="person.skills"
+              class="section">
+              <div class="icon">
+                <i class="material-icons white-color">done_all</i>
+                <span class="section-headline white-color"> {{ lang.skills }} </span>
+              </div>
+              <div class="section-content skills-content">
+                <a
+                  v-for="(skill, index) in person.skills"
+                  class="grid-item"
+                  :key="index"
+                  :href="skill.url">
+                  <span class="squarred-grid-item">
+                    {{ skill.name }}
+                  </span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
     </div>
 
     <div class="left-column-bg">
@@ -109,27 +130,7 @@
 
             <span class="section-content__header"> {{ experience.position }}</span>
             <span class="section-content__subheader"> {{ experience.company }}</span>
-            <div class="section-content__text"> {{ experience.timeperiod }}</div>
             <span class="section-content__text--light"> {{ experience.description }}</span>
-          </a>
-        </div>
-      </div>
-
-      <div class="education-section section">
-        <div class="icon">
-          <i class="material-icons">school</i>
-          <span class="section-headline">{{ lang.education }}</span>
-        </div>
-
-        <div class="section-content">
-          <a v-for="(education, index) in person.education" :key="index"
-            class="section-content__item"
-            :href="education.website">
-
-            <span class="section-content__header"> {{ education.school }} </span>
-            <span class="section-content__subheader">{{ education.degree }}</span>
-            <span class="section-content__text"> {{ education.timeperiod }} </span>
-            <span class="section-content__text--light"> {{ education.description }} </span>
           </a>
         </div>
       </div>
@@ -154,21 +155,21 @@
         </div>
       </div>
 
-      <div v-if="person.skills"
-        class="skills-section section">
+      <div class="education-section section">
         <div class="icon">
-          <i class="material-icons">done_all</i>
-          <span class="section-headline"> {{ lang.skills }} </span>
+          <i class="material-icons">school</i>
+          <span class="section-headline">{{ lang.education }}</span>
         </div>
 
-        <div class="section-content-grid">
-          <a v-for="(skill, index) in person.skills" :key="index"
-            class="grid-item"
-            :href="skill.url">
+        <div class="section-content">
+          <a v-for="(education, index) in person.education" :key="index"
+            class="section-content__item"
+            :href="education.website">
 
-            <i v-if="skill.iconClass" :class="'lang-icon ' + skill.iconClass"></i>
-
-            <span v-else class="squarred-grid-item"> {{ skill.name }} </span>
+            <span class="section-content__header"> {{ education.school }} </span>
+            <span class="section-content__subheader">{{ education.degree }}</span>
+            <span class="section-content__text"> {{ education.timeperiod }} </span>
+            <span class="section-content__text--light"> {{ education.description }} </span>
           </a>
         </div>
       </div>
@@ -209,7 +210,7 @@ export default Vue.component(name, getVueOptions(name));
 
 <style lang="less" scoped>
 
-@accent-color: #A800FA;
+@accent-color: #34495E;
 
 .resume {
   display: flex;
@@ -227,7 +228,7 @@ export default Vue.component(name, getVueOptions(name));
   text-align: left;
 
   color: #ffffff;
-  color:rgba(255,255,255,0.59);
+  color:rgba(255,255,255,0.70);
   background-color: @accent-color;
   overflow: hidden;
   display: block;
@@ -398,26 +399,6 @@ a {
   font-weight: 500;
 }
 
-.squarred-grid-item {
-  display: block;
-
-  border: 1px solid @accent-color;
-
-  background-color: @accent-color;
-  color: white;
-
-  margin-top: 5px;
-  padding: 5px;
-
-  transition: .5s;
-
-  &:hover {
-    background-color: transparent;
-    color: @accent-color;
-    transition: .5s;
-  }
-}
-
 .section-content__subheader {
   display: block;
   font-weight: 400;
@@ -429,7 +410,7 @@ a {
 }
 
 .section-content__text--light {
-  color: rgba(0,0,0,0.42);
+  color: rgba(0,0,0,0.70);
   font-weight: 300;
 }
 
@@ -496,4 +477,22 @@ a {
   margin-bottom: 10px;
 }
 
+.squarred-grid-item {
+  display: block;
+  color: white;
+  margin-left: 15px;
+  padding-left: 10px;
+}
+
+.white-color{
+  color: white;
+}
+
+.skills-content{
+  padding-left: 0;
+  justify-content: flex-start;
+}
+.without-margin{
+  margin: 0;
+}
 </style>
