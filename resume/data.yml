@@ -1,4 +1,5 @@
 /* #*/ export const PERSON = `
+#https://medium.com/@developerdavo/how-to-write-a-cv-as-a-software-developer-8841a79f8458
 name:
   first: Alex
   middle:
@@ -16,12 +17,21 @@ experience:
   timeperiod: since October 2016
   description: As one of Number8's software contractors, I contributed to our client's development team making ASP pages to be HTML5 Compliant and replacing VBScript with javascript, testing and fixing any issues, making the migration process transparent to the user.
   website: https://number8.com
+  achievements:
+  - description: Use Regex to improve conversion speed and void human errors replacing text
+  - description: Use Regex to improve conversion speed and void human errors replacing text
 
 - company: Seguridad Movil GPS / Optimus GPS Tracking
   position: Senior Software Engineer, IT Manager - Onsite
   timeperiod: since December 2014
   description: Seguridad Móvil GPS provides GPS tracking and fleet management solutions, with a presence in more than 10 countries I built a team of 6 developers and now I am leading it. I moved all the projects under a version control system and after that, we start the development of a new GPS tracking platform using new technologies and establishing a development process that helps me to gather the requirements and turns them into doable tasks for each developer, following agile methodologies and best practices we ensure the software quality.
   website: http://www.smovilgps.com
+  achievements:
+  - description: Implemented Git & Github as a source code version control.
+  - description: Led the development of 'Optimus' mobile app using React Native
+  - description: Developed an API using ASP.NET Web API that is consumed by the mobile app.
+  - description: Created a development team conformed by 6 developers to develop new projects founding the IT Department
+  - description: Designed a new database  a development team conformed by 6 developers to develop new projects
 
 education:
 - degree: B.S in Computer Science
@@ -31,6 +41,26 @@ education:
 
 - degree: English Diploma
   timeperiod: January 2007 - June 2009
+
+self-study:
+- name: React
+  description:
+- name: Redux
+  description:
+- name: Loopback
+  description:
+- name: Amazon Web Services
+  description:
+
+
+volunteer-work:
+  description: 
+
+Languages:
+- name: Spanish
+  level: Native
+- name: English
+  level: Fluent
 
 # skill level goes 0 to 100
 skills:

@@ -7,4 +7,5 @@ import './purple.vue';
 import './side-bar-rtl.vue';
 import './left-right-rtl.vue';
 import './creative.vue';
+import './alex.vue';
 import './cool.vue';
